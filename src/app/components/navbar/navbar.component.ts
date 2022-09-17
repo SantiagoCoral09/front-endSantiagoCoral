@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  img ='https://brandemia.org/contenido/subidas/2017/01/nintendo_switch_logo_960x640.jpg';
+  img ='https://brandemia.org/contenido/subidas/2017/01/nintendo_switch_logo-960x640.jpg';
 
   constructor() { }
 

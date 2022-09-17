@@ -5,6 +5,9 @@
     <div class="col lg6">
         <button class="btn btn-primary float-end" routerLink="/add">Agregar Comentario</button>
     </div>
+    <div class="col lg6">
+        <a class="btn btn-info" routerLink="/busqueda">Buscar</a>
+    </div>
 </div>
 <table *ngIf="listComentarios.length > 0" class="table table-hover mt-3">
     <thead>
@@ -18,7 +21,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let comentario of listComentarios">
-            <td>{{comentario.titulo}}</td>
+            <td><a [routerLink]="['/ver', 1]">  {{comentario.titulo}}</a></td>
             <td>{{comentario.autor}}</td>
             <td>{{comentario.fechaCreacion | date: 'dd/mm/yyyy'}}</td>
             <td style="width: 5%;"><button class="btn btn-primary btn-sm float-end">Editar</button></td>

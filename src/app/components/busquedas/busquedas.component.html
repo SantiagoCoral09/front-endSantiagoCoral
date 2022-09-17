@@ -1,0 +1,17 @@
+<h3 class="mt-3">Búsquedas</h3>
+<div class="mb-3">
+    <input class="mb-2" type="search" placeholder="Search" aria-label="Search">
+    <svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<form [formGroup]="inicioSesion" (ngSubmit)="iniciar()">
+    <div class="mb-3">
+        <label for="usuario" class="form-label">Usuario</label>
+        <input type="text" formControlName="usuario" id="usuario" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="passw" class="form-label">Contraseña</label>
+        <input type="password" formControlName="passw" id="passw" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary float-end">Aceptar</button>
+    <button type="button" routerLink="/" class="btn btn-secondary">Regresar</button>
+</form>

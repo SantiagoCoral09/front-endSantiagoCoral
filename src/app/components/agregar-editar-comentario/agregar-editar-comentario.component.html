@@ -2,16 +2,22 @@
 <form [formGroup]="agregaComentario" (ngSubmit)="agregar()">
     <div class="mb-3">
         <label for="titulo" class="form-label">Titulo</label>
-        <input type="text" formControlName="titulo" id="titulo" class="form-control">
+        <input type="text" formControlName="titulo" id="titulo" class="form-control" autocomplete="off">
+        <span *ngIf="agregaComentario.get('titulo')?.invalid && agregaComentario.get('titulo')?.touched" class="text-danger">
+            *El <strong>titulo</strong> es un campo requerido
+        </span>
     </div>
     <div class="mb-3">
         <label for="autor" class="form-label">Autor</label>
-        <input type="text" formControlName="autor" id="autor" class="form-control">
+        <input type="text" formControlName="autor" id="autor" class="form-control" autocomplete="off">
+        <span *ngIf="agregaComentario.get('autor')?.invalid && agregaComentario.get('autor')?.touched" class="text-danger">
+            *El <strong>autor</strong> es un campo requerido
+        </span>
     </div>
     <div class="mb-3">
         <label for="texto" class="form-label">Comentario</label>
         <textarea formControlName="texto" class="form-control" id="texto" rows="4"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary float-end">Agregar</button>
+    <button type="submit" [disabled]="agregaComentario.invalid" class="btn btn-primary float-end">Agregar</button>
     <button type="button" routerLink="/" class="btn btn-secondary">Regresar</button>
 </form>
